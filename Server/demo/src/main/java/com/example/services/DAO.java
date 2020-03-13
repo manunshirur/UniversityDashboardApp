@@ -30,9 +30,9 @@ public class DAO {
         		"	SELECT id as date_id, date_yyyy_mm_dd  " + 
         		"	from master_dates  " + 
         		"    where  " + 
-        		"    id >= REPLACE(DATE_SUB(date(now()), INTERVAL 10 DAY),'-','') " + 
+        		"    id >= REPLACE(DATE_SUB(date(now()), INTERVAL 45 DAY),'-','') " +
         		"    and  " + 
-        		"    id <=  REPLACE(DATE_SUB(date(now()), INTERVAL 0 DAY),'-','')  " + 
+        		"    id <=  REPLACE(DATE_SUB(date(now()), INTERVAL 30 DAY),'-','')  " +
         		"    order by id " + 
         		"    ) mst_dates " + 
         		"left join ( " + 
