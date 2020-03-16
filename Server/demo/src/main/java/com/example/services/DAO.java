@@ -30,9 +30,9 @@ public class DAO {
         		"	SELECT id as date_id, date_yyyy_mm_dd  " + 
         		"	from master_dates  " + 
         		"    where  " + 
-        		"    id >= REPLACE(DATE_SUB(date(now()), INTERVAL 45 DAY),'-','') " +
+        		"    id >= REPLACE(DATE_SUB(date(now()), INTERVAL 60 DAY),'-','') " +
         		"    and  " + 
-        		"    id <=  REPLACE(DATE_SUB(date(now()), INTERVAL 30 DAY),'-','')  " +
+        		"    id <=  REPLACE(DATE_SUB(date(now()), INTERVAL 45 DAY),'-','')  " +
         		"    order by id " + 
         		"    ) mst_dates " + 
         		"left join ( " + 
@@ -42,7 +42,7 @@ public class DAO {
         		"on dine.dining_date_id = mst_dates.date_id and dine.student_id = mst.id " + 
         		" order by mst.id, date_id " + 
         		" ) a " + 
-        		"  WHERE days_missed_consecutively = 7 " + 
+        		"  WHERE days_missed_consecutively = 7 " +
         		"order by student_id, date_yyyy_mm_dd;";
 		System.out.println("HERE IN QUERY EXE ");
 
